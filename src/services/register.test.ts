@@ -7,9 +7,9 @@ import { UserAlreadyExistsError } from './errors/user-already-exists'
 describe('Register Use Case', () => {
     test('user be able to register', async () => {
         const usersRespository = new InMemoryUsersRepository()
-        const registerUseCase = new RegisterUseCase(usersRespository)
+        const sut = new RegisterUseCase(usersRespository)
 
-        const { user } = await registerUseCase.execute({
+        const { user } = await sut.execute({
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123456',
@@ -20,9 +20,9 @@ describe('Register Use Case', () => {
     
     test('user password on registration must be hash', async () => {
         const usersRespository = new InMemoryUsersRepository()
-        const registerUseCase = new RegisterUseCase(usersRespository)
+        const sut = new RegisterUseCase(usersRespository)
 
-        const { user } = await registerUseCase.execute({
+        const { user } = await sut.execute({
             name: 'John Doe',
             email: 'johndoe@example.com',
             password: '123456',
@@ -38,18 +38,18 @@ describe('Register Use Case', () => {
 
     test('user can not be able to register with same email twice', async () => {
         const usersRespository = new InMemoryUsersRepository()
-        const registerUseCase = new RegisterUseCase(usersRespository)
+        const sut = new RegisterUseCase(usersRespository)
 
         const email = 'johndoe@example.com'
         
-        await registerUseCase.execute({
+        await sut.execute({
             name: 'John Doe',
             email,
             password: '123456',
         })
 
         await expect(() =>
-            registerUseCase.execute({
+            sut.execute({
                 name: 'John Doe',
                 email,
                 password: '123456',
