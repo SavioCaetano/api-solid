@@ -1,30 +1,30 @@
-# App GymPass style
+# API para realizar check-in em academia (baseada na funcionalidade do GymPass)
 
-## RFs (Requisitos funcionais) -> Funcionalidades do app, o que vai ser possível o usuário fazer na aplicação
+# Sobre o projeto
 
-- [x] Deve ser possível se cadastrar;
-- [x] Deve ser possível se autenticar;
-- [x] Deve ser possível obter o perfil de um usuário logado;
-- [x] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
-- [x] Deve ser possível o usuário obter seu histórico de check-ins;
-- [x] Deve ser possível o usuário buscar academias próximas (até 10km);
-- [x] Deve ser possível o usuário buscar academias pelo nome;
-- [x] Deve ser possível o usuário realizar check-in em uma academia;
-- [x] Deve ser possível validar o check-in de um usuário;
-- [x] Deve ser possível cadastrar uma academia;
+Esse projeto foi desenvolvido durante o curso de Node ministrado pela [Rocketseat](https://www.rocketseat.com.br/ "Site da Rocketseat"). O principal foco é trabalhar com design patterns, testes automatizados (unitários e E2E) e o prícipio de programação SOLID.
 
-## RNs (Regras de negócio) -> Caminhos que cada requisito pode tomar, condições aplicadas para os RFs
+O primeiro passo foi levantar todos os requisitos funcionais e não-funcionais para a construção dessa API, além de suas respectivas regras de negócio (essas informações estão disponíveis no arquivo "Requisitos.md"). Os testes foram realizados do começo ao fim da aplicação, começando nos testes unitários e terminando nos testes End-To-End.
 
-- [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
-- [x] O usuário não pode fazer 2 check-ins no mesmo dia;
-- [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
-- [x] O check-in só pode ser validado até 20 minutos após criado;
-- [x] O check-in só pode ser validado por administradores;
-- [x] A academia só pode ser cadastrada por administradores;
+A API conta com funcionalidades como: cadastro de usuário e academias, autenticação (JWT), realização de check-in (somente em academias próximas a localização do usuário), histórico de check-ins, validação de check-in e também buscas de academias pelo nome e/ou proximidade (raio de até 10km).
 
-## RNFs (Requisitos não-funcionais) -> Não partem do cliente, requisitos técnicos (qual bd, qual estratégia para paginação, etc)
+O ambiente da aplicação foi criado com Docker e banco de dados PostgreSQL.
 
-- [x] A senha do usuário precisa estar criptografada;
-- [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
-- [x] Todas listas de dados precisam estar paginadas com 20 itens por página;
-- [x] O usuário deve ser identificado por um JWT (JSON Web Token);
+# Tecnologias Utilizadas
+
+- Node
+- TypeScript
+- PostgreSQL
+- Prisma ORM
+- Docker
+- Vitest
+
+# Dependências
+- Node
+- Docker
+
+# Author
+
+Sávio Cardoso Caetano
+
+https://www.linkedin.com/in/savio-c-caetano/
