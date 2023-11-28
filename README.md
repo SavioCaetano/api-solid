@@ -8,7 +8,7 @@ O primeiro passo foi levantar todos os requisitos funcionais e não-funcionais p
 
 A API conta com funcionalidades como: cadastro de usuário e academias, autenticação (JWT), realização de check-in (somente em academias próximas a localização do usuário), histórico de check-ins, validação de check-in e também buscas de academias pelo nome e/ou proximidade (raio de até 10km).
 
-O ambiente da aplicação foi criado com Docker e banco de dados PostgreSQL.
+O ambiente da aplicação foi criado com Docker e banco de dados PostgreSQL. Outra caracteristica desse projeto é a utilização de 'Continuous Integration (CI)' com GitHub Actions, que executa determinadas ações quando ocorre um 'push' ou um 'pull_request' no repositório, rodando os testes unitários e os testes E2E respectivamente.
 
 # Tecnologias Utilizadas
 
@@ -18,6 +18,7 @@ O ambiente da aplicação foi criado com Docker e banco de dados PostgreSQL.
 - Prisma ORM
 - Docker
 - Vitest
+- CI (GitHub Actions)
 
 # Dependências
 - Node
